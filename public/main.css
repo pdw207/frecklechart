@@ -1,0 +1,48 @@
+body {
+  width: 700px;
+  margin: auto;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+h1, h2 {
+  margin: 0;
+}
+
+h2 {
+  color: darkgrey;
+}
+
+.name {
+  text-align: left;
+  white-space: nowrap;
+}
+
+table {
+    border-spacing: 10px;
+    border-collapse: collapse;
+}
+
+th.rotate {
+  height: 140px;
+  white-space: nowrap;
+}
+
+th.rotate > div {
+  transform:
+    translate(25px, 51px)
+    rotate(270deg);
+  width: 30px;
+}
+th.rotate > div > span {
+  padding: 5px 10px;
+}
+
+td {
+  padding: 10px 20px;
+  text-align: center;
+}
+
+tbody tr:nth-child(odd) {
+   background-color: #ccc;
+}

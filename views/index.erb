@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Time Report</title>
+    <link rel="stylesheet" type="text/css" href="main.css">
+  </head>
+
+  <body>
+
+  <h1>Time Report - Freckle</h1>
+  <h2><%= @report.start_date[-5..-1] + ' to '  + @report.end_date[-5..-1]%></h2>
+    <br>
+    <table>
+      <thead>
+        <th></th>
+        <%@report.projects.each do |project|%>
+          <th class="rotate"><div><span><%= project%></span></div></th>
+        <%end%>
+          <th class="rotate"><div><span>Total</span></div></th>
+      </thead>
+      <tbody>
+        <% @report.employees.each do |employee| %>
+          <tr>
+            <td class="name"><%= employee.name%></td>
+              <%@report.projects.each do |project|%>
+                <td><%= employee.projects[project]%></td>
+              <%end%>
+            <td>***</td>
+          </tr>
+        <%end%>
+        <tr>
+          <td>Total</td>
+          <%@report.projects.each do |project|%>
+            <td>**</td>
+          <%end%>
+        </tr>
+      </tbody>
+   </table>
+
+  </body>
+</html>
